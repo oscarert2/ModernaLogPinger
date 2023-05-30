@@ -28,4 +28,4 @@ OUTPUT_FILE_NAME: The name of the file to log the results to. If not specified, 
 
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is open source.
