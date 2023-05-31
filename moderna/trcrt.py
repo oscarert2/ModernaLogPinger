@@ -40,7 +40,7 @@ def main():
         if OUTPUT_FILE_NAME:
             OUTPUT_FILE_NAME = OUTPUT_FILE_NAME
         else:
-            OUTPUT_FILE_NAME = datetimestring() + ".txt"
+            OUTPUT_FILE_NAME = f"./logs/{datetimestring()}.txt"
 
         print(f"Output file: {OUTPUT_FILE_NAME}")
 
