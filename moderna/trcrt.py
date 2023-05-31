@@ -17,10 +17,12 @@ def trace_route(ip_address, location, output_file):
         imprime = False
         output_file.write(f"To: {ip_address} in: {location}\n")
         for line in lines:
-            print(line)
+            if imprime:
+                i += 1
             if "Procesamiento" in line or "Computing" in line:
                 imprime = True
-            if imprime:
+                i = 0
+            if imprime and i >= 3:
                 print(line)
                 output_file.write(line + "\n")
     except subprocess.CalledProcessError as e:
