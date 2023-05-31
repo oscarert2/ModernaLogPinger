@@ -17,8 +17,6 @@ pause
 
 :: echo that the script is going to start running.
 
-echo "Starting Pinger Script"
-
 :: Run the script
 
-python trcrt.py
+call run.bat

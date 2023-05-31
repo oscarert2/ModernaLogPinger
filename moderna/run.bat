@@ -6,4 +6,11 @@ echo "Starting Pinger Script"
 
 :: Run the script
 
-python trcrt.py
+setlocal
+%@Try%
+  python trcrt.py
+%@EndTry%
+:@Catch
+  python3 trcrt.py
+:@EndCatch
+
