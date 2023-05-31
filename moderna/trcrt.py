@@ -4,6 +4,7 @@ import pandas as pd
 import sys
 import os
 import time
+from parsertrcrt import parser
 
 def datetimestring():
     now = datetime.datetime.now()
