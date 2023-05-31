@@ -26,6 +26,12 @@ The following variables can be configured in the script:
 INPUT_FILE_NAME: The name of the CSV file containing the list of IP addresses and their locations.
 OUTPUT_FILE_NAME: The name of the file to log the results to. If not specified, the script will generate a file name based on the current date and time.
 
+How to run
+
+When running for the first time, run the install.bat file.
+
+if not, run the run.bat file.
+
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
