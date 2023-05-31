@@ -5,6 +5,7 @@
 echo "Starting Pinger Script"
 
 :: Run the script
+cd /D "%~dp0"
 
 setlocal
 %@Try%
