@@ -17,7 +17,8 @@ def trace_route(ip_address, location, output_file):
         imprime = False
         output_file.write(f"From: {ip_address} in: {location}\n")
         for line in lines:
-            if "Procesamiento" in line:
+            print(line)
+            if "Procesamiento" in line or "Computing" in line:
                 imprime = True
             if imprime:
                 print(line)
@@ -28,7 +29,6 @@ def trace_route(ip_address, location, output_file):
 
 def main():
     INPUT_FILE_NAME = "ips.csv"
-    OUTPUT_FILE_NAME = ""
 
     if not os.path.isfile(INPUT_FILE_NAME):
         print(f"Error: {INPUT_FILE_NAME} does not exist")
@@ -37,10 +37,7 @@ def main():
     ips = pd.read_csv(INPUT_FILE_NAME)
 
     while True:
-        if OUTPUT_FILE_NAME:
-            OUTPUT_FILE_NAME = OUTPUT_FILE_NAME
-        else:
-            OUTPUT_FILE_NAME = f"./logs/{datetimestring()}.txt"
+        OUTPUT_FILE_NAME = f"./logs/{datetimestring()}.txt"
 
         print(f"Output file: {OUTPUT_FILE_NAME}")
 
