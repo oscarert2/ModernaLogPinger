@@ -15,7 +15,7 @@ def trace_route(ip_address, location, output_file):
         console_output = subprocess.check_output(f"pathping -q 4 {ip_address}", text=True, shell=True)
         lines = console_output.split("\n")
         imprime = False
-        output_file.write(f"From: {ip_address} in: {location}\n")
+        output_file.write(f"To: {ip_address} in: {location}\n")
         for line in lines:
             print(line)
             if "Procesamiento" in line or "Computing" in line:
