@@ -1,15 +1,22 @@
 import re
 import json
 
-def parser():
 
-    input_str = '''  0                                           LAPTOP-NG3N61A9.tol.itesm.mx [10.25.231.239] 
+def parser(TXTfile):
+
+    FID = open(TXTfile);
+    DATA = FID.read()
+    FID.close()
+    input_str = str(DATA)
+    '''
+    input_str = """  0                                           LAPTOP-NG3N61A9.tol.itesm.mx [10.25.231.239] 
                                     0/   4 =  0%   |
     1    3ms     0/   4 =  0%     0/   4 =  0%  10.25.231.250 
                                     0/   4 =  0%   |
     2    3ms     0/   4 =  0%     0/   4 =  0%  10.25.173.36 
                                     0/   4 =  0%   |
-    3    3ms     0/   4 =  0%     0/   4 =  0%  10.25.173.10'''
+    3    3ms     0/   4 =  0%     0/   4 =  0%  10.25.173.10"""
+    '''
 
     # Split the input string into lines
     lines = input_str.split('\n')
