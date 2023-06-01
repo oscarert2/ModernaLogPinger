@@ -2,12 +2,8 @@ import re
 import json
 
 
-def parser(TXTfile):
+def to_json_parser(origin, location, input_str, file_name):
 
-    FID = open(TXTfile);
-    DATA = FID.read()
-    FID.close()
-    input_str = str(DATA)
     '''
     input_str = """  0                                           LAPTOP-NG3N61A9.tol.itesm.mx [10.25.231.239] 
                                     0/   4 =  0%   |
@@ -25,7 +21,11 @@ def parser(TXTfile):
     regex = r'^\s*(\d+)\s+(\d+ms)?\s+(\d+/\s*\d+\s*=\s*\d+%)\s+(\d+/\s*\d+\s*=\s*\d+%)\s+(\d+\.\d+\.\d+\.\d+)\s*$'
 
     # Create a list to store the results
-    results = []
+    results = {
+        "Location": location,
+        origin: []
+    }
+    # results = []
 
     # Loop through each line and extract the relevant information
     for line in lines:
@@ -38,9 +38,14 @@ def parser(TXTfile):
                 'lost': match.group(4),
                 'ip_address': match.group(5)
             }
-            results.append(result)
+            results[origin].append(result)
 
     # Convert the results to a JSON object
     json_str = json.dumps(results)
 
-    print(json_str)
+    # Write json_str into json file
+    with open(f"json_logs/{file_name}.json", "a+") as json_file:
+        json_file.write("\n")
+        json_file.write(json_str)
+        json_file.close()
+
