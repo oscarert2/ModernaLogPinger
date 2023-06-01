@@ -6,7 +6,7 @@ ModernaLogPinger is a Python script that traces the route to a list of IP addres
 
 Requirements
 
-Python 3.x, Pandas
+Windows. Python 3.x. Pandas
 
 Installation
 
@@ -21,5 +21,11 @@ The following variables can be configured in the script:
 INPUT_FILE_NAME: The name of the CSV file containing the list of IP addresses and their locations.
 OUTPUT_FILE_NAME: The name of the file to log the results to. If not specified, the script will generate a file name based on the current date and time.
 
+Debugging:
+If the run.bat file does not run the script run it manually by navigating to the folder through console and inputting the command: Python3 trcrt.py
+If this doesnt work verify that the folder name Log exists in the same folder as the script.
+
 License
 This project is open source.
+
+
