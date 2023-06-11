@@ -1,6 +1,6 @@
-# ModernaLogPinger
+# Moderna Ping 2 Log
 
-ModernaLogPinger
+Moderna Ping 2 Log
 
 ModernaLogPinger is a Python script that traces the route to a list of IP addresses and logs the results to a file. This script uses the pathping command to trace the route to each IP address in the list, and logs the output to a file.
 
